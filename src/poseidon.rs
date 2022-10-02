@@ -1,5 +1,4 @@
 use crate::parameters::*;
-use ark_crypto_primitives::crh::TwoToOneCRHScheme;
 use ark_ec::ProjectiveCurve;
 use ark_ff::PrimeField;
 use ark_sponge::poseidon::PoseidonParameters;

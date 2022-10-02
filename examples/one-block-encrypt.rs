@@ -1,12 +1,10 @@
 use ark_std::test_rng;
-use ark_bls12_381::{Bls12_381 as ProjectiveEngine, Fr};
-use ark_ec::ProjectiveCurve;
+use ark_bls12_381::{Bls12_381 as ProjectiveEngine};
 use ark_ed_on_bls12_381::{
-    constraints::EdwardsVar as CurveVar, EdwardsProjective as Curve, Fq, FrParameters,
+    constraints::EdwardsVar as CurveVar, EdwardsProjective as Curve, Fq,
 };
 use ark_ff::Field;
 use ark_groth16::Groth16;
-use ark_relations::r1cs::{ConstraintSynthesizer, ConstraintSystem};
 use ark_snark::{CircuitSpecificSetupSNARK, SNARK};
 use ark_encryption::{EncryptCircuit, Parameters, poseidon};
 

@@ -1,7 +1,5 @@
 use crate::poseidon::get_poseidon_params;
 use anyhow::anyhow;
-use ark_crypto_primitives::snark::NonNativeFieldInputVar;
-use ark_crypto_primitives::Error;
 use ark_ec::{PairingEngine, ProjectiveCurve};
 use ark_ff::{to_bytes, BigInteger, BitIteratorLE, Field, PrimeField, ToConstraintField, Zero};
 use ark_groth16::{Groth16, Proof, ProvingKey, VerifyingKey};
@@ -155,7 +153,7 @@ where
         msg: &Plaintext<C>,
         r: &Randomness<C>,
         params: &Parameters<C>,
-    ) -> Result<Ciphertext<C>, Error> {
+    ) -> anyhow::Result<Ciphertext<C>> {
         let mut c1 = C::prime_subgroup_generator();
         c1.mul_assign(r.0.clone());
 
